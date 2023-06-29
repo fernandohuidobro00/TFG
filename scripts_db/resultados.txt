@@ -1,0 +1,27 @@
+02 Mar 11:40    INFO  Data: tripadvisor, Results on 5 CV: best valid by DeepFM: {'mae': 0.7658, 'rmse': 0.9716, 'auc': 0.5037}, lrate: 0.01, layers: [128 128 128]
+02 Mar 11:40    INFO  time cost: : 21.724592447280884s
+
+
+02 Mar 11:43    INFO  Data: tripadvisor, Results on 5 CV: best valid by FM: {'mae': 0.9851, 'rmse': 1.2381, 'auc': 0.505}, lrate: 0.01, layers: [128 64 32]
+02 Mar 11:43    INFO  time cost: : 17.22071886062622s
+
+02 Mar 11:53    INFO  Data: tripadvisor, Results on 5 CV: best valid by NeuCMF0i: {'mae': 0.7779, 'rmse': 0.9868, 'auc': 0.5464}, lrate: 0.01, layers: [128 64 32]
+02 Mar 11:53    INFO  time cost: : 23.957479238510132s
+
+02 Mar 11:54    INFO  Data: tripadvisor, Results on 5 CV: best valid by NeuCMF0w: {'mae': 0.7831, 'rmse': 0.9957, 'auc': 0.4921}, lrate: 0.01, layers: [128 64 32]
+02 Mar 11:54    INFO  time cost: : 22.151376485824585s
+
+
+02 Mar 11:56    INFO  Data: tripadvisor, Results on 5 CV: best valid by NeuCMFi0: {'mae': 0.8809, 'rmse': 1.1018, 'auc': 0.5002}, lrate: 0.01, layers: [128 64 32]
+02 Mar 11:56    INFO  time cost: : 22.962757110595703s
+
+02 Mar 11:57    INFO  Data: tripadvisor, Results on 5 CV: best valid by NeuCMFii: {'mae': 0.8028, 'rmse': 1.0335, 'auc': 0.4643}, lrate: 0.01, layers: [128 64 32]
+Better results! improvement: 2.37%, best log saved in ./log/best/tripadvisor-NeuCMFii-Mar-02-2023_11-57-09_MAE = 0.8028.log
+02 Mar 11:57    INFO  time cost: : 22.80360174179077s
+
+
+02 Mar 11:58    INFO  Data: tripadvisor, Results on 5 CV: best valid by NeuCMFw0: {'mae': 0.824, 'rmse': 1.0457, 'auc': 0.5138}, lrate: 0.01, layers: [128 64 32]
+02 Mar 11:58    INFO  time cost: : 22.92061686515808s
+
+02 Mar 11:59    INFO  Data: tripadvisor, Results on 5 CV: best valid by NeuCMFww: {'mae': 0.7866, 'rmse': 1.0215, 'auc': 0.4656}, lrate: 0.01, layers: [128 64 32]
+02 Mar 11:59    INFO  time cost: : 23.050493240356445s
