@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Título de la página</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+  </head>
+  <body>
+    <header>
+        
+    </header>
+    <nav>
+        <div class="nav-links">
+          <a href="/app/">Inicio</a>
+          <a href="/app/business_list/">Lista de Negocios</a>
+          <a href="/app/user_list/">Lista de Usuarios</a>
+        </div>
+      </nav>
+      
+    
+    <main>
+      {% block main_content %}
+      {% endblock %}
+    </main>
+    
+    <footer>
+      <!-- Pie de página aquí -->
+    </footer>
+  </body>
+</html>

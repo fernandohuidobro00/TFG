@@ -1,0 +1,45 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block main_content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detalle de Resultado</title>
+	<link rel="stylesheet" href="{% static 'css/resultado.css' %}">
+</head>
+<body>
+  <div class="business-info">
+    <h1>{{ name }}</h1>
+    <h2>{{ business }}</h2>
+    <ul>
+      <li><span class="label">Popularidad:</span> {{ popular }} {% if popular == "Popular" %} <img src="{% static 'images/popular.png' %}" class="img popular" alt="Popular"> {% else %} <img src="{% static 'images/unpopular.png' %}" alt="NoPopular"> {% endif %}</li>
+      <li><span class="label">Parking:</span> {{ parking }} {% if parking == "Hay Parking" %} <img src="{% static 'images/parking.png' %}" alt="Parking"> {% else %} <img src="{% static 'images/noParking.jpg' %}" alt="NoParking"> {% endif %}</li>
+      <li><span class="label">Día:</span> {{ day }} {% if day == "Dia de Diario" %} <img src="{% static 'images/weekday.png' %}" alt="Weekday"> {% else %} <img src="{% static 'images/weekend.png' %}" alt="Weekend"> {% endif %}</li>
+      <li><span class="label">Hora:</span> {{ hour }} {% if hour == "Cena" %} <img src="{% static 'images/moon.png' %}" alt="Moon"> {% else %} <img src="{% static 'images/sun.jpg' %}" alt="Sun"> {% endif %}</li>
+      <li><span class="label">Categories:</span> {{ categories }}</li>
+
+    </ul>
+  </div>
+  <div class="results">
+    <table class="result-table">
+      <thead><h2 class="title-table">Otras recomendaciones para ir al restaurante.</h2>
+        <tr>
+          <th>Hora</th>
+          <th>Día</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for resultado in others_results %}
+            <tr>
+              <td>{{ resultado.hour }}</td>
+              <td>{{ resultado.day }}</td>
+            </tr>
+            {% endfor %}
+      </tbody>
+    </table>
+  </div>    
+</body>
+</html>
+{% endblock %}

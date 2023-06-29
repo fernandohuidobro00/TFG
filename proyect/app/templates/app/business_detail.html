@@ -1,0 +1,56 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block main_content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Perfil de Business</title>
+	<link rel="stylesheet" href="{% static 'css/business_detail.css' %}">
+</head>
+<body>
+	<div class="profile">
+        <div class="title-container">
+            <h3 class="title">Perfil de Business</h3>
+          </div>
+		<h1 class="name">{{ business.name }}</h1>
+		<div class="info">
+			<div class="left">
+				<p class="stat">Número de reseñas: {{ num_reviews }}</p>
+				<p class="stat">Estrellas: {{ business.stars }}</p>
+				<p class="stat">Estado: {{ is_open}} </p>
+
+			</div>
+			<div class="right">
+				<p class="stat">Dirección: {{ business.address }}, {{ business.city }}, {{ business.state }}, {{ business.postal_code }}</p>
+				<p class="stat">Latitud: {{ business.latitude }}</p>
+				<p class="stat">Longitud: {{ business.longitude }}</p>
+			</div>
+		</div>
+		<div class="reviews">
+			<h2 class="title">Reseñas</h2>
+			<table>
+				<tr>
+          <th>Review Link</th>
+					<th>Usuario</th>
+					<th>Puntuación</th>
+					<th>Fecha</th>
+					<th>Texto</th>
+				</tr>
+				{% for review in reviews %}
+				<tr>
+          <td><a href="/app/review_detail/{{ review.review_id }}" class = "review-link">review_link</a></td>
+          <td><a href="/app/user_detail/{{ review.user.user_id }}" class="user-link">{{ review.user.name }}</a></td>
+					<td>{{ review.stars }}</td>
+					<td>{{ review.date }}</td>
+					 <td>{{ review.text }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</body>
+</html>
+
+{% endblock %}

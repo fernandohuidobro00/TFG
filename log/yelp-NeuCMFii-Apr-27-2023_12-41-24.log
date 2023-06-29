@@ -1,0 +1,11 @@
+Thu 27 Apr 2023 12:41:38 INFO  [Training]: train_batch_size = [500] negative sampling: [None]
+Thu 27 Apr 2023 12:41:38 INFO  [Evaluation]: eval_batch_size = [4960] eval_args: [{'split': {'CV': 5}, 'group_by': 'user', 'mode': 'labeled', 'order': 'RO'}]
+Thu 27 Apr 2023 12:41:53 INFO  [Training]: train_batch_size = [500] negative sampling: [None]
+Thu 27 Apr 2023 12:41:53 INFO  [Evaluation]: eval_batch_size = [4960] eval_args: [{'split': {'CV': 5}, 'group_by': 'user', 'mode': 'labeled', 'order': 'RO'}]
+Thu 27 Apr 2023 12:42:07 INFO  [Training]: train_batch_size = [500] negative sampling: [None]
+Thu 27 Apr 2023 12:42:07 INFO  [Evaluation]: eval_batch_size = [4960] eval_args: [{'split': {'CV': 5}, 'group_by': 'user', 'mode': 'labeled', 'order': 'RO'}]
+Thu 27 Apr 2023 12:42:21 INFO  [Training]: train_batch_size = [500] negative sampling: [None]
+Thu 27 Apr 2023 12:42:21 INFO  [Evaluation]: eval_batch_size = [4960] eval_args: [{'split': {'CV': 5}, 'group_by': 'user', 'mode': 'labeled', 'order': 'RO'}]
+Thu 27 Apr 2023 12:42:36 INFO  [Training]: train_batch_size = [500] negative sampling: [None]
+Thu 27 Apr 2023 12:42:36 INFO  [Evaluation]: eval_batch_size = [4960] eval_args: [{'split': {'CV': 5}, 'group_by': 'user', 'mode': 'labeled', 'order': 'RO'}]
+Thu 27 Apr 2023 12:42:36 INFO  Loaded context variables: day hour categories popular parking, with context situation ID: contexts

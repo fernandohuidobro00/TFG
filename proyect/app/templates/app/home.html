@@ -1,0 +1,52 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block main_content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Bienvenido a nuestro recomendador de restaurantes de Tampa</h1>
+        <p>¿No sabes dónde comer hoy? No te preocupes, ¡nosotros te ayudamos! Utiliza nuestro recomendador de 
+          restaurantes para encontrar el lugar perfecto para ti, basados en la base de datos de yelp.com.</p>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-user col-md-6">
+        <h2>Elige un usuario</h2>
+        <form action="{% url 'app:resultado' %}" method="POST">
+          {% csrf_token %}
+          <select name="select_user">
+            {% for user in users %}
+              <option value="{{ user.name }}">{{ user.name }}</option>        
+            {% endfor %}
+          </select>
+      </div>
+
+      <div class="col-business col-md-6">
+        <h2>Elige un negocio</h2>
+          <select name="select_business">
+            {% for business in businesses %}
+              <option value="{{ business.name }}">{{ business.name }}</option>        
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-primary">Recomiéndame un restaurante</button>
+        </form>
+      </div>
+    {% endblock %}
+        
+  

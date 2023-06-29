@@ -1,0 +1,29 @@
+<table>
+    <thead>
+      <tr>
+        <th>Business</th>
+        <th>Categories</th>
+        <th>Popular</th>
+        <th>Parking</th>
+        <th>Day</th>
+        <th>Hour</th>
+        <th>Predic</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for diccionario in lista_diccionarios %}
+        {% for key, value in diccionario.items %}
+          <tr>
+            <td>{{ value.business }}</td>
+            <td>{{ value.categories }}</td>
+            <td>{{ value.popular }}</td>
+            <td>{{ value.parking }}</td>
+            <td>{{ value.day }}</td>
+            <td>{{ value.hour }}</td>
+            <td>{{ value.predic }}</td>
+          </tr>
+        {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+  

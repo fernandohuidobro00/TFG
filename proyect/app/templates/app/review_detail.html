@@ -1,0 +1,38 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block main_content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detalle de Reseña</title>
+	<link rel="stylesheet" href="{% static 'css/review_detail.css' %}">
+</head>
+<body>
+	<div class="profile">
+        <div class="title-container">
+            <h3 class="title">Detalle de Reseña</h3>
+        </div>
+        <a href="/app/business_detail/{{ review.business.business_id }}" class="business-link"> <h1 class="name">{{ review.business.name }} </h1></a>
+
+		<div class="info">
+			<div class="left">
+				<p class="stat">Estrellas {{review.stars}}</p>
+				<p class="stat">Número de votos útiles: {{ review.useful }}</p>
+				<p class="stat">Número de votos divertidos: {{ review.funny }}</p>
+				<p class="stat">Número de votos útiles: {{ review.cool }}</p>
+			</div>
+			<div class="right">
+				<p class="stat">Fecha de la Reseña: {{ review.date }}</p>
+				<p class="stat">Usuario: <a href="/app/user_detail/{{ review.user.user_id }}" class="user-link">{{ review.user.name }}</a></p>
+			</div>
+		</div>
+		<div class="text">
+			<p>{{ review.text }}</p>
+		</div>
+	</div>
+</body>
+</html>
+
+{% endblock %}

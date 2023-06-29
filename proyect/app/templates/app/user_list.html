@@ -1,0 +1,46 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block main_content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Listado de Usuarios</title>
+  <link rel="stylesheet" href="{% static 'css/user_list.css' %}">
+</head>
+<body>
+    <h1 class="page-title">Listado de Usuarios</h1>
+    <div class="table-container">
+      <table class="businesses-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Número de Reseñas</th>
+            <th>Fecha de inicio</th>
+            <th>Fans</th>
+            <th>Media de estrellas</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+            <tr>
+              <td><a href="/app/user_detail/{{ user.user_id }}" class="user-link">{{ user.name }}</a></td>
+              <td>{{ user.review_count }}</td>
+              <td>{{ user.yelping_since }}</td>
+              <td>{{ user.fans }}</td>
+              <td>{{ user.average_stars }}</td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="7">No hay usuarios disponibles.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>
+{% endblock %}
+

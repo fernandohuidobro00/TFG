@@ -1,0 +1,104 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block main_content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Perfil de Usuario</title>
+	<link rel="stylesheet" href="{% static 'css/user_detail.css' %}">
+</head>
+<body>
+	<div class="profile">
+    <div class="title-container">
+      <h3 class="title">Perfil de Usuario</h3>
+    </div>
+		<h1 class="name">{{ user.name }}</h1>
+		<div class="info">
+			<div class="left">
+				<p class="stat">Número de reseñas: {{ num_reviews }}</p>
+				<p class="stat">Fans: {{ user.fans }}</p>
+			</div>
+			<div class="right">
+				<p class="stat">Miembro desde: {{ user.yelping_since }}</p>
+				<p class="stat">Puntuación promedio: {{ user.average_stars }}</p>
+
+			</div>
+		</div>
+		<div class="compliments">
+			<h2 class="title">Elogios</h2>
+			<table>
+				<tr>
+					<td>Caliente</td>
+					<td>{{ user.compliment_hot }}</td>
+				</tr>
+				<tr>
+					<td>Más</td>
+					<td>{{ user.compliment_more }}</td>
+				</tr>
+				<tr>
+					<td>Perfil</td>
+					<td>{{ user.compliment_profile }}</td>
+				</tr>
+				<tr>
+					<td>Tierno</td>
+					<td>{{ user.compliment_cute }}</td>
+				</tr>
+				<tr>
+					<td>Lista</td>
+						<td>{{ user.compliment_list }}</td>
+				</tr>
+				<tr>
+					<td>Nota</td>
+					<td>{{ user.compliment_note }}</td>
+				</tr>
+				<tr>
+					<td>Sencillo</td>
+					<td>{{ user.compliment_plain }}</td>
+				</tr>
+				<tr>
+					<td>Genial</td>
+					<td>{{ user.compliment_cool }}</td>
+				</tr>
+				<tr>
+					<td>Divertido</td>
+					<td>{{ user.compliment_funny }}</td>
+				</tr>
+				<tr>
+					<td>Escritor</td>
+					<td>{{ user.compliment_writer }}</td>
+				</tr>
+				<tr>
+					<td>Fotos</td>
+					<td>{{ user.compliment_photos }}</td>
+				</tr>
+			</table>
+		</div>
+    <div class="reviews">
+			<h2 class="title">Reseñas</h2>
+			<table>
+				<tr>
+          <th>Reseña Link</th>
+					<th>Negocio</th>
+					<th>Puntuación</th>
+					<th>Fecha</th>
+					<th>Texto</th>
+				</tr>
+				{% for review in reviews %}
+				<tr>
+          <td><a href="/app/review_detail/{{ review.review_id }}" class = "review-link">review_link</a></td>
+          <td><a href="/app/business_detail/{{ review.business.business_id }}" class="business-link">{{ review.business.name }}</a></td>
+					<td>{{ review.stars }}</td>
+					<td>{{ review.date }}</td>
+					<td>{{ review.text }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</body>
+</html>
+
+{% endblock %}
